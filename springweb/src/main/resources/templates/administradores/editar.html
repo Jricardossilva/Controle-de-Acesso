@@ -1,0 +1,38 @@
+<div th:replace="shared/header"></div>
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <h1 class="h3 mb-2 text-gray-800">Edição de Adminstrador</h1>
+        <p class="mb-4">
+        	Aqui iremos editar o administrador.
+		</p>
+
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4" style="padding: 30px;">
+            <form method="POST" th:action="@{'/administradores/' + ${administrador?.id} +'/atualizar'}">
+			  <div class="mb-3 mt-3">
+			    <label for="nome" class="form-label">Nome</label>
+			    <input type="text" class="form-control" th:value="${administrador?.nome}" id="nome" required placeholder="Digite seu nome" name="nome">
+			  </div>
+			  <div class="mb-3 mt-3">
+			    <label for="email" class="form-label">Email</label>
+			    <input type="email" class="form-control" th:value="${administrador?.email}" id="email" required placeholder="Digite seu email" name="email">
+			  </div>
+			  <div class="mb-3 mt-3">
+			    <label for="senha" class="form-label">Senha</label>
+			    <input type="password" class="form-control" th:value="${administrador?.senha}" id="senha" required placeholder="Digite sua senha" name="senha">
+			  </div>
+			  <div class="mb-3 mt-3">
+			    <label for="observacao" class="form-label">Observações</label>
+			    <textarea class="form-control" id="observacao" th:value="${administrador?.observacao}" placeholder="Digite uma observação" name="observacao"></textarea>
+			  </div>
+			  
+			  <button type="submit" class="btn btn-primary">Enviar</button>
+			</form>
+        </div>
+
+    </div>
+    <!-- /.container-fluid -->
+<div th:replace="shared/footer
+"></div>
